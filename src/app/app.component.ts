@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as Leaflet from 'leaflet';
 import "leaflet-control-geocoder";
-import { HttpClient } from '@angular/common/http';
 
 Leaflet.Icon.Default.imagePath = 'assets/';
 @Component({
@@ -25,10 +24,9 @@ export class AppComponent {
   id = 0;
 
   ngOnInit() {
-    // this.callMethod();
-    this.id = setInterval(() => {
+    // this.initMarkers();
+    setInterval(() => {
       this.initMarkers(); 
-      // this.fetchData();
     }, 5000);
   }
 
@@ -56,10 +54,6 @@ export class AppComponent {
         this.latt = latitude;
         this.longg = longitude;
         console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-
-        // this.http.get('https://api.openweathermap.org/data/2.5/weather?lat=' + this.latt + '&lon=' + this.longg + '&appid=3b39c6b6485260f7bb6f56a9c8d7a258').subscribe(data => {
-        //   console.log(data);
-        // });
       });
     } else {
       console.log("Geolocation is not supported by this browser.");

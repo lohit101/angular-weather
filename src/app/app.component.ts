@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as Leaflet from 'leaflet';
 import "leaflet-control-geocoder";
+import { HttpClient } from '@angular/common/http';
 
 Leaflet.Icon.Default.imagePath = 'assets/';
 @Component({
@@ -21,19 +22,52 @@ export class AppComponent {
     center: { lat: 28.626137, lng: 79.821603 }
   }
 
+  id = 0;
+
+  ngOnInit() {
+    // this.callMethod();
+    this.id = setInterval(() => {
+      this.initMarkers(); 
+      // this.fetchData();
+    }, 5000);
+  }
+
+  ngOnDestroy() {
+    if (this.id) {
+      clearInterval(this.id);
+    }
+  }
+
+  // callMethod(){
+  //   setInterval(() => {
+  //     this.initMarkers()
+  //   }, 10000)
+  //   // this.initMarkers();
+  // }
+  
+  latt = 0.00;
+  longg = 0.00;
+  
   initMarkers() {
-    const initialMarkers = [
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        this.latt = latitude;
+        this.longg = longitude;
+        console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+
+        // this.http.get('https://api.openweathermap.org/data/2.5/weather?lat=' + this.latt + '&lon=' + this.longg + '&appid=3b39c6b6485260f7bb6f56a9c8d7a258').subscribe(data => {
+        //   console.log(data);
+        // });
+      });
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+    var initialMarkers = [
       {
-        position: { lat: 28.625485, lng: 79.821091 },
-        draggable: true
-      },
-      {
-        position: { lat: 28.625293, lng: 79.817926 },
+        position: { lat: this.latt, lng: this.longg },
         draggable: false
-      },
-      {
-        position: { lat: 28.625182, lng: 79.81464 },
-        draggable: true
       }
     ];
     for (let index = 0; index < initialMarkers.length; index++) {
@@ -42,6 +76,9 @@ export class AppComponent {
       marker.addTo(this.map).bindPopup(`<b>${data.position.lat},  ${data.position.lng}</b>`);
       this.map.panTo(data.position);
       this.markers.push(marker)
+      setInterval(() => {
+        this.map.removeLayer(marker);
+      }, 5000)
     }
   }
 

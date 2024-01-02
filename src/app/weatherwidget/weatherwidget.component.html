@@ -1,21 +1,3 @@
-<!-- <article class="widget">
-    <div class="weatherIcon">
-        <i class="wi wi-day-cloudy"></i>
-    </div>
-    <div class="bottom">
-        <div class="weatherInfo">
-            <div class="temperature">
-                <span>{{WeatherData.temp}}&deg;</span>
-            </div>
-            <div class="description">    
-                <div class="weatherCondition">{{WeatherData.condit}}</div>    
-                <div class="place">{{WeatherData.name}}, {{WeatherData.sys.country}}</div>
-            </div>
-        </div>
-        <div class="date">{{WeatherData.date}}</div>
-    </div>
-</article> -->
-
 <section class="viewport">
     <header class="flex-stack">
       <h1 id="location">
@@ -35,83 +17,6 @@
     </header>
   
     <main>
-      <!-- <article>
-        <h2 id="severe-weather">Severe Weather</h2>
-        <figure class="stack">
-          <blockquote>
-            <p>Hurricane Local Statement until 3:00 AM on Saturday. Additional alerts: Tropical Storm Watch, Flood Watch.</p>
-          </blockquote>
-          <figcaption>
-            <cite>National Weather Service</cite>
-          </figcaption>
-        </figure>
-      </article> -->
-  
-      <article>
-        <h2 id="hourly-forecast">Hourly forecast</h2>
-        <ol class="x-scroll" role="list">
-          <li class="forecast-tile">
-            <small>Now</small>
-            <span>☀️</span>
-            <span>78°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">5pm</small>
-            <span>☀️</span>
-            <span>78°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">6pm</small>
-            <span>☀️</span>
-            <span>75°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">7pm</small>
-            <span>☀️</span>
-            <span>72°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">7:36pm</small>
-            <span>🌅</span>
-            <span>Sunset</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">8pm</small>
-            <span>🌙</span>
-            <span>70°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">9pm</small>
-            <span>🌙</span>
-            <span>68°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">10pm</small>
-            <span>🌙</span>
-            <span>67°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">11pm</small>
-            <span>🌙</span>
-            <span>67°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">12pm</small>
-            <span>🌙</span>
-            <span>66°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">1am</small>
-            <span>🌙</span>
-            <span>65°</span>
-          </li>
-          <li class="forecast-tile">
-            <small class="small-caps">2am</small>
-            <span>🌙</span>
-            <span>64°</span>
-          </li>
-        </ol>
-      </article>
   
       <article>
         <h2 id="10-day-forecast">10-day forecast</h2>
@@ -120,131 +25,135 @@
             <span>Today</span>
             <span>☀️</span>
             <div class="range">
-              <span class="low">63°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">80°</span>
+              <span class="high">{{WeatherData.temp}}°C</span>
             </div>
           </li>
           <li class="forecast-row">
-            <span>Sat</span>
+            <span>{{TenData.daylist[0]}}</span>
             <span>☁️</span>
             <div class="range">
-              <span class="low">63°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">77°</span>
+              <span class="high">{{TenData.templist[0]}}°C</span>
             </div>
           </li>
           <li class="forecast-row">
-            <span>Sun</span>
+            <span>{{TenData.daylist[1]}}</span>
             <span>🌧️</span>
             <div class="range">
-              <span class="low">68°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">79°</span>
+              <span class="high">{{TenData.templist[1]}}°C</span>
             </div>
           </li>
           <li class="forecast-row">
-            <span>Mon</span>
+            <span>{{TenData.daylist[2]}}</span>
             <span>☀️</span>
             <div class="range">
-              <span class="low">66°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">77°</span>
+              <span class="high">{{TenData.templist[2]}}°C</span>
             </div>
           </li>
           <li class="forecast-row">
-            <span>Tue</span>
+            <span>{{TenData.daylist[3]}}</span>
             <span>☀️</span>
             <div class="range">
-              <span class="low">64°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">79°</span>
+              <span class="high">{{TenData.templist[3]}}°C</span>
             </div>
           </li>
           <li class="forecast-row">
-            <span>Wed</span>
+            <span>{{TenData.daylist[4]}}</span>
             <span>☀️</span>
             <div class="range">
-              <span class="low">64°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">81°</span>
+              <span class="high">{{TenData.templist[4]}}°C</span>
             </div>
           </li>
           <li class="forecast-row">
-            <span>Thu</span>
+            <span>{{TenData.daylist[5]}}</span>
             <span>☀️</span>
             <div class="range">
-              <span class="low">65°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">80°</span>
+              <span class="high">{{TenData.templist[5]}}°C</span>
             </div>
           </li>
           <li class="forecast-row">
-            <span>Fri</span>
+            <span>{{TenData.daylist[6]}}</span>
             <span>☀️</span>
             <div class="range">
-              <span class="low">63°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">82°</span>
+              <span class="high">{{TenData.templist[6]}}°C</span>
             </div>
           </li>
           <li class="forecast-row">
-            <span>Sat</span>
+            <span>{{TenData.daylist[7]}}</span>
             <span>☀️</span>
             <div class="range">
-              <span class="low">64°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">84°</span>
+              <span class="high">{{TenData.templist[7]}}°C</span>
             </div>
           </li>
           <li class="forecast-row">
-            <span>Sun</span>
+            <span>{{TenData.daylist[8]}}</span>
             <span>☀️</span>
             <div class="range">
-              <span class="low">65°</span>
+              <span class="low"></span>
               <div class="meter"></div>
-              <span class="high">86°</span>
+              <span class="high">{{TenData.templist[8]}}°C</span>
             </div>
           </li>
         </ol>
       </article>
   
       <article>
-        <h2 id="air-quality">Air quality</h2>
+        <h2 id="air-quality">Sunset</h2>
         <div class="stack">
-          <p>62 - Moderate</p>
-          <p>Air quality index is 62, which is similar to yesterday at about this time.</p>
-          <div class="meter" style="margin-top: 1rem"></div>
+          <p>🌅 - {{WeatherData.sunset}}</p>
+          <p>The sun will set at {{WeatherData.sunset}}, towards the west.</p>
         </div>
       </article>
   
-      <article style="aspect-ratio: 5/3">
-        <h2 id="precipitation">Precipitation</h2>
-      </article>
-  
       <article class="tile">
-        <h2>UV Index</h2>
-      </article>
-      <article class="tile">
-        <h2>Sunset</h2>
+        <h2>Feels Like</h2>
+        <div class="stack">
+          <p>{{WeatherData.feels_like}}°C</p>
+          <p>The temperature feels like {{WeatherData.feels_like}}°C right now.</p>
+        </div>
       </article>
       <article class="tile">
         <h2>Wind</h2>
-      </article>
-      <article class="tile">
-        <h2>Precipitation</h2>
-      </article>
-      <article class="tile">
-        <h2>Feels Like</h2>
-      </article>
-      <article class="tile">
-        <h2>Humidity</h2>
-      </article>
-      <article class="tile">
-        <h2>Visibility</h2>
+        <div class="stack">
+          <p>{{WeatherData.windSpeed}} KPH</p>
+          <p>The wind is blowind at {{WeatherData.windSpeed}} KPH towards {{WeatherData.wind.deg}}° from North.</p>
+          <!-- <div class="arrowCont">
+            <div class="arrow">
+              <div class="arrowHead"></div>
+            </div>
+          </div> -->
+        </div>
       </article>
       <article class="tile">
         <h2>Pressure</h2>
+        <div class="stack">
+          <p>{{WeatherData.main.pressure}} hPa</p>
+          <p>The wind is blowing at {{WeatherData.windSpeed}} KPH towards {{WeatherData.wind.deg}}° from North.</p>
+        </div>
+      </article>
+      <article class="tile">
+        <h2>Humidity</h2>
+        <div class="stack">
+          <p>{{WeatherData.main.humidity}}%</p>
+          <p>The humidity level is currently at {{WeatherData.main.humidity}}%.</p>
+        </div>
       </article>
   
       <footer>

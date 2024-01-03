@@ -25,8 +25,9 @@ export class AppComponent {
 
   ngOnInit() {
     // this.initMarkers();
+    this.locationBanner();
     setInterval(() => {
-      this.initMarkers(); 
+      this.initMarkers();
     }, 5000);
   }
 
@@ -108,5 +109,21 @@ export class AppComponent {
             (results: any) => results.length ? resolve(results[0].name) : reject(null)
         );
     })
+  }
+
+  // Location Banner
+  locationBanner() {
+    if (navigator.geolocation && document.cookie) {
+      document.getElementById("locationBanner")?.classList.add("bannerDisplayFalse");
+    } else {
+      document.getElementById("locationBanner")?.classList.add("bannerDisplayTrue");
+    }
+  }
+
+  locationBannerAccept() {
+    const d = new Date();
+    d.setTime(d.getTime() + (30*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = "locationAccess=true;" + expires + ";path=/";
   }
 }

@@ -123,6 +123,7 @@ color-scheme: light dark;
 @layer base {
 * {
     box-sizing: border-box;
+    color: white;
 }
 
 html,
@@ -312,10 +313,11 @@ grid-column: 1 / -1;
 
 .tile {
 width: 100%;
-aspect-ratio: 1;
+min-height: max-content;
+height: 100%;
 }
 
-.tile > .stack > p:nth-child(1) {
+.stack > .unstack > p {
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -496,6 +498,78 @@ to {
     color: white;
     font-size: 50px;
 }
+
+.unstack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.space {
+    display: block;
+    width: .5rem;
+}
+
+.sunsetp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.locationBanner {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    position: fixed;
+    z-index: 999;
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+    margin-left: .5rem;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+    gap: .5rem;
+    border-radius: 15px;
+}
+
+.locationBannerHeading {
+    font-weight: 500;
+}
+
+.locationBannerBtnGroup {
+    display: flex;
+    flex-direction: row;
+}
+
+.locationBannerBtn {
+    width: 50%;
+    margin: .5rem .25rem;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+}
+
+.locationBannerBtn:nth-child(1) {
+    background-color: white;
+    color: black;
+}
+
+.bannerDisplayTrue {
+    display: flex;
+}
+
+.bannerDisplayFalse {
+    display: none;
+}
+
+/* locationBannerHeading
+locationBannerPara
+locationBannerBtnGroup
+locationBannerBtn */
 
 /* .arrowCont {
     display: flex;

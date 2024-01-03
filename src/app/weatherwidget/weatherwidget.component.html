@@ -117,7 +117,9 @@
       <article>
         <h2 id="air-quality">Sunset</h2>
         <div class="stack">
-          <p>🌅 - {{WeatherData.sunset}}</p>
+          <div class="unstack">
+            <p class="sunsetp"><img height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2klEQVR4nO2UwQqCQBCGNbsXHXydOlndo2eJXqu7gUJEURQ9QD1E576Y2mBBtzV3vVQfCLoz8/8zumsQ/HEFmAI3isjaxIdBF9iUGGwl5mwgAB1grYnvgF7gE56TpMDSW+ffh/oOqyYNHriKtIHoUwMgklqbuCRdgAMQl8RzICtZj4EjcDY1pxvsVaMn2f8Vz4jkompbtoJYK0gqGAy1hgpTv+tqBITqeaAO2VVdct9XsVDlWqc1mc0xM6slqoknhj/pC4mNXQwW2EmriskW9EXetEFW+7UFP8cd1fQY1i6ZtHYAAAAASUVORK5CYII=">&nbsp;{{WeatherData.sunset}}</p>
+          </div>
           <p>The sun will set at {{WeatherData.sunset}}, towards the west.</p>
         </div>
       </article>
@@ -125,14 +127,22 @@
       <article class="tile">
         <h2>Feels Like</h2>
         <div class="stack">
-          <p>{{WeatherData.feels_like}}°C</p>
+          <div class="unstack">
+            <img height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIElEQVR4nO2UsU4CQRBAT+yNJBKwRoj/YQUhQO3f+A+ECiE0FNpbqjkaTITWhFILG6Q2AfLMylyynih7w2ooeMkkt5Obedm52w0CR4A00ADGEk3g2LXeVZIBnlkylzC8AEc+RV1pfAUcSFxLruNTNJWmWSuXk9ybT9Enrnk18YbRegX9/xKFfyoKfLE1IovdN/pKNJf4OiLwAZCXfrOfREB+U0kReJVmLesWj2PeKWgl+8CDNLoA9oBT4PabZsnA1GhEZWlwI5Jz4J3fKWlEbSk+AyrAgvW0NKJ7KT4EnnDjTiMKpbiHO+Emo0vCpUZUV4iqGlEKGCWQPJqaxCLrwE4cJBPgRCWxZAVguGYnulthhcyMsWbOifyNJsxz1XVcHwKVxhOnwYyCAAAAAElFTkSuQmCC">
+            <div class="space"></div>
+            <p>{{WeatherData.feels_like}}°C</p>
+          </div>
           <p>The temperature feels like {{WeatherData.feels_like}}°C right now.</p>
         </div>
       </article>
       <article class="tile">
         <h2>Wind</h2>
         <div class="stack">
-          <p>{{WeatherData.windSpeed}} KPH</p>
+          <div class="unstack">
+            <img height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA8UlEQVR4nOXVvy5EQRTH8bsREiLRkpCIfYntVTyBKPx5Bt7CU2g0ot3tNHYFDYnSG4ggorCNj0jOyg033Hszt7HfbqY438w5M7/JsrEDm7jBK66wnrL4rmLSSHAXBbcwjb1YX6YSDNBHK9azIXhJIsiDKeyXPgHO1OMda00IhrgoVfx/oP4MRjziEPNNCUbco91EB5bRDclxcsEnWArBc1ahRcOiUMNpvOqJ3N5CHUGeLwluY+8Ac1jESeUWYbIo1LCKNz95+HPIOI9ga/0Wauigh6e4pkdYqRLLO5ipFGplwHbtUCsLNnAdX+M4hdo3PgCbe66sVKH52AAAAABJRU5ErkJggg==">
+            <div class="space"></div>
+            <p>{{WeatherData.windSpeed}} KPH</p>
+          </div>
           <p>The wind is blowind at {{WeatherData.windSpeed}} KPH towards {{WeatherData.wind.deg}}° from North.</p>
           <!-- <div class="arrowCont">
             <div class="arrow">
@@ -144,21 +154,29 @@
       <article class="tile">
         <h2>Pressure</h2>
         <div class="stack">
-          <p>{{WeatherData.main.pressure}} hPa</p>
-          <p>The wind is blowing at {{WeatherData.windSpeed}} KPH towards {{WeatherData.wind.deg}}° from North.</p>
+          <div class="unstack">
+            <img height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABOElEQVR4nN2UTUoDQRCFZ6ULgyCY4BFMQoib/HgkPYyZxMtEcgVXGnGf5AQqOELCJyWvYRjtSXcmIPqgmaHq9Xs11dWTJP8eQBsYAXPgTWuuWLuK8AFwC6zxw3IT4+4iPpPIO5ACfeBIawCMgUycWZSJKjcsgE4JrwssxZ3E9HytyjseTgO4yplk2tMKMbDDM4xKxB/FuVbMzsFwE2LwJHJvi7g9G4oPXCzE4FXkWiFeBx6UewbOcrma4i9VDE6A+6K4cscxBq5F/R9yp64thfgwpkU234bxVvL3sU5DyC1go9HrBvAvgA+N6XloRe4rlmUmEl+VjbVv4yFwp42Z5nyoabF1qbZY5Yap7Qk2yJmkapcPG13MuJ9dwagpI3cH0LvFmjsLe8y+sFfRPCobsCckv2aQ/EV8AiXO2PQMBvEqAAAAAElFTkSuQmCC">
+            <div class="space"></div>
+            <p>{{WeatherData.main.pressure}} hPa</p>
+          </div>
+          <p>The pressure is {{WeatherData.main.pressure}} hPa at the moment.</p>
         </div>
       </article>
       <article class="tile">
         <h2>Humidity</h2>
         <div class="stack">
-          <p>{{WeatherData.main.humidity}}%</p>
+          <div class="unstack">
+            <img height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQklEQVR4nOXWzSsEcRzH8eG0Wx62/AMUrm4OtiUPcXBy8NdQDi4OynmjLTfxHziQ0oqSXDYXOXJgrbblxFu/+pYp7Mx85jdb8jn9HvrOq9/DTBMEfylAHjgDqkCuk/AWX9nsFFoC3kOwa09ljfYCd3zPLdCTJbzB71nPCh0C3trAbm4wC/iA6Oz5RieAD+Kl5AvtAi6In3Nf8CLJs+ADPhXgqo+zVTOeBt6VWdhR0T7gNQXccl86BV4mfZYUuOIBTr7dwLUH+EqBG1bsbnZRhJ8VuGnFees/CvCLAt9Y8Zj1DwW4psDbVrxq/XkBLivwnBXfA/02tpIQnkkMuwAn9oB9oNvGpoHLGOhRoAYYBeohvGDjAxHoEzAswy7AZAh/ANbc2UWg3n4GRoDjONubeqU/BZi11dbsPW9auyxfpOC/5BP70GFFVJj10gAAAABJRU5ErkJggg==">
+            <div class="space"></div>
+            <p>{{WeatherData.main.humidity}}%</p>
+          </div>
           <p>The humidity level is currently at {{WeatherData.main.humidity}}%.</p>
         </div>
       </article>
   
       <footer>
         <h2>Angular Weather App</h2>
-        <p><small>Created with <a href="https://angularjs.org/">Angular JS</a> and <a href="https://openweathermap.org/">OpenWeather API</a></small></p>
+        <p><small>Created with <a href="https://angularjs.org/">Angular JS</a> and <a href="https://openweathermap.org/">OpenWeatherMap API</a></small></p>
         <p><small>By Lohit Chhabra</small></p>
       </footer>
       <!-- Created by Lohit Chhabra -->

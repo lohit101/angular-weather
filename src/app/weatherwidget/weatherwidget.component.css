@@ -371,6 +371,12 @@ font-feature-settings: "tnum";
     width: max-content;
 }
 
+.forecast-row > span:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .range {
 display: grid;
 gap: 0.5rem;
@@ -459,6 +465,9 @@ header {
     --animation-name: fade-out;
     --range-start: 5rem;
     --range-end: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #temperature {

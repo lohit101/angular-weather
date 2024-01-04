@@ -8,7 +8,7 @@
       </h1>
       <p class="flex-stack" style="--space: 0.2rem" aria-hidden="true">
         <span id="temperature" class="current-temp heading-lg">{{WeatherData.temp}}</span>
-        <span id="condition">{{WeatherData.condit}}</span>
+        <span id="condition"><img src="https://openweathermap.org/img/wn/{{WeatherData.icon}}.png" alt="icon">{{WeatherData.condit}}</span>
       </p>
       <ul id="range" class="cluster" role="list" style="--justify: center; --gap: 0.5rem">
         <li>H: {{WeatherData.temp_max}}°</li>
@@ -19,11 +19,11 @@
     <main>
   
       <article>
-        <h2 id="10-day-forecast">10-day forecast</h2>
+        <h2 id="10-day-forecast">5-day forecast</h2>
         <ol class="flex-stack" role="list" style="--space: 0.75rem">
           <li class="forecast-row">
             <span>Today</span>
-            <span>☀️</span>
+            <span><img height="26px" src="https://openweathermap.org/img/wn/{{WeatherData.icon}}.png" alt="icon"></span>
             <div class="range">
               <span class="low"></span>
               <div class="meter"></div>
@@ -32,7 +32,7 @@
           </li>
           <li class="forecast-row">
             <span>{{TenData.daylist[0]}}</span>
-            <span>☁️</span>
+            <span><img height="26px" src="https://openweathermap.org/img/wn/{{TenData.iconlist[0]}}.png" alt="icon"></span>
             <div class="range">
               <span class="low"></span>
               <div class="meter"></div>
@@ -41,7 +41,7 @@
           </li>
           <li class="forecast-row">
             <span>{{TenData.daylist[1]}}</span>
-            <span>🌧️</span>
+            <span><img height="26px" src="https://openweathermap.org/img/wn/{{TenData.iconlist[1]}}.png" alt="icon"></span>
             <div class="range">
               <span class="low"></span>
               <div class="meter"></div>
@@ -50,7 +50,7 @@
           </li>
           <li class="forecast-row">
             <span>{{TenData.daylist[2]}}</span>
-            <span>☀️</span>
+            <span><img height="26px" src="https://openweathermap.org/img/wn/{{TenData.iconlist[2]}}.png" alt="icon"></span>
             <div class="range">
               <span class="low"></span>
               <div class="meter"></div>
@@ -59,7 +59,7 @@
           </li>
           <li class="forecast-row">
             <span>{{TenData.daylist[3]}}</span>
-            <span>☀️</span>
+            <span><img height="26px" src="https://openweathermap.org/img/wn/{{TenData.iconlist[3]}}.png" alt="icon"></span>
             <div class="range">
               <span class="low"></span>
               <div class="meter"></div>
@@ -68,47 +68,11 @@
           </li>
           <li class="forecast-row">
             <span>{{TenData.daylist[4]}}</span>
-            <span>☀️</span>
+            <span><img height="26px" src="https://openweathermap.org/img/wn/{{TenData.iconlist[4]}}.png" alt="icon"></span>
             <div class="range">
               <span class="low"></span>
               <div class="meter"></div>
               <span class="high">{{TenData.templist[4]}}°C</span>
-            </div>
-          </li>
-          <li class="forecast-row">
-            <span>{{TenData.daylist[5]}}</span>
-            <span>☀️</span>
-            <div class="range">
-              <span class="low"></span>
-              <div class="meter"></div>
-              <span class="high">{{TenData.templist[5]}}°C</span>
-            </div>
-          </li>
-          <li class="forecast-row">
-            <span>{{TenData.daylist[6]}}</span>
-            <span>☀️</span>
-            <div class="range">
-              <span class="low"></span>
-              <div class="meter"></div>
-              <span class="high">{{TenData.templist[6]}}°C</span>
-            </div>
-          </li>
-          <li class="forecast-row">
-            <span>{{TenData.daylist[7]}}</span>
-            <span>☀️</span>
-            <div class="range">
-              <span class="low"></span>
-              <div class="meter"></div>
-              <span class="high">{{TenData.templist[7]}}°C</span>
-            </div>
-          </li>
-          <li class="forecast-row">
-            <span>{{TenData.daylist[8]}}</span>
-            <span>☀️</span>
-            <div class="range">
-              <span class="low"></span>
-              <div class="meter"></div>
-              <span class="high">{{TenData.templist[8]}}°C</span>
             </div>
           </li>
         </ol>
@@ -177,7 +141,5 @@
       <footer>
         <h2>Angular Weather App</h2>
         <p><small>Created with <a href="https://angularjs.org/">Angular JS</a> and <a href="https://openweathermap.org/">OpenWeatherMap API</a></small></p>
-        <p><small>By Lohit Chhabra</small></p>
       </footer>
-      <!-- Created by Lohit Chhabra -->
     </main>

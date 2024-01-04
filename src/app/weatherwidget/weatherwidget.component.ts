@@ -69,6 +69,8 @@ export class WeatherwidgetComponent implements OnInit {
     this.WeatherData.sunset = new Date(this.WeatherData.sys.sunset * 1000).toLocaleTimeString();
 
     this.WeatherData.windSpeed = (this.WeatherData.wind.speed * 1.609).toFixed(2);
+
+    this.WeatherData.icon = this.WeatherData.weather[0].icon;
   }
 
   setForecast(data: any) {
@@ -78,16 +80,20 @@ export class WeatherwidgetComponent implements OnInit {
 
     var templist = [];
     var daylist = [];
+    var iconlist = [];
 
-    for (var x = 1; x <= 10; x++) {
+    for (var x = 1; x <= 39; x=x+8) {
       var templistitem = String(this.TenData.list[x].main.temp - 273.15).slice(0,2);
       templist.push(templistitem);
       var daylistitem = this.TenData.list[x].dt_txt.slice(5,10).replace("-",".");
       daylist.push(daylistitem);
+      var iconlistitem = this.TenData.list[x].weather[0].icon;
+      iconlist.push(iconlistitem);
     }
 
     this.TenData.templist = templist;
     this.TenData.daylist = daylist;
+    this.TenData.iconlist = iconlist;
   }
 
 }
